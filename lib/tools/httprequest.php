@@ -1,0 +1,104 @@
+<?php
+
+class Http_Request
+{
+    protected $config = array();
+    protected $userAgent = 'Mozilla/5.0';
+
+    public function __construct(array $config = array())
+    {
+        $this->config = array_merge(array(
+            'curl' => array(),
+            'fopen' => array(),
+            'force_redirects' => false,
+            'prefer_curl' => true,
+        ), $config);
+    }
+
+    public function fetch($url, array $params = array())
+    {
+        $params = array_merge(array(
+            'curl' => array(),
+            'fopen' => array(),
+        ), $params);
+
+        if (function_exists('curl_init') && $this->config['prefer_curl']) {
+            return $this->curl($url, $params['curl']);
+        }
+
+        return $this->fileGetContents($url, $params['fopen']);
+    }
+
+    protected function curl($url, array $params = array())
+    {
+        $options = $params + $this->config['curl'] + array(
+            CURLOPT_USERAGENT => $this->userAgent,
+            CURLOPT_ENCODING => '',
+            CURLOPT_FOLLOWLOCATION => true,
+        );
+
+        $options[CURLOPT_URL] = $url;
+        $options[CURLOPT_HEADER] = true;
+        $options[CURLOPT_RETURNTRANSFER] = 1;
+
+        $options[CURLOPT_CAINFO] = dirname(__FILE__).DS.'cacert.pem';
+
+        if (ini_get('safe_mode') || ini_get('open_basedir')) {
+            $options[CURLOPT_FOLLOWLOCATION] = false;
+            $options[CURLOPT_TIMEOUT] = 15;
+            $this->config['force_redirects'] = true;
+        }
+
+        $handler = curl_init();
+        curl_setopt_array($handler, $options);
+        $response = curl_exec($handler);
+
+        $status = curl_getinfo($handler, CURLINFO_HTTP_CODE);
+        $headerSize = curl_getinfo($handler, CURLINFO_HEADER_SIZE);
+
+        $header = substr($response, 0, $headerSize);
+        $body = substr($response, $headerSize);
+        curl_close($handler);
+
+        if ($this->config['force_redirects'] && in_array($status, array('301', '302'))) {
+            if (preg_match('~(?:location|uri): ?([^\n]+)~i', $header, $matches)) {
+                $url = trim($matches['1']);
+
+                if (substr($url, 0, 1) == '/') {
+                    $parsed = parse_url($options[CURLOPT_URL]);
+                    $url = $parsed['scheme'].'://'.rtrim($parsed['host'], '/').$url;
+                }
+
+                return $this->curl($url, $options);
+            }
+        }
+
+        if (empty($body) || !in_array($status, array('200'))) {
+            throw new \Exception($status.': Invalid response for '.$url);
+        }
+
+        return $body;
+    }
+
+    protected function fileGetContents($url, array $params = array())
+    {
+        if (!ini_get('allow_url_fopen')) {
+            throw new \Exception('Could not execute lookup, allow_url_fopen is disabled');
+        }
+
+        $defaultOptions = array(
+            'method' => 'GET',
+            'user_agent' => $this->userAgent,
+            'follow_location' => 1,
+            'max_redirects' => 20,
+            'timeout' => 40,
+        );
+
+        $context = array('http' => array_merge($defaultOptions, $this->config['fopen'], $params));
+        if ($data = file_get_contents($url, false, stream_context_create($context))) {
+            return $data;
+        }
+
+        throw new \Exception('Invalid Server Response from '.$url);
+    }
+}

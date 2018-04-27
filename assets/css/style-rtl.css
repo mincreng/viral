@@ -1,0 +1,298 @@
+ body {
+	direction: rtl;
+}   
+
+input, button, select, textarea {
+    font-family: tahoma, Arial, Helvetica, sans-serif;;
+}
+
+ul .children{
+    margin-right: 20px;
+}
+
+.back-to-top {
+    right: auto;
+    left: 30px;
+}
+
+.popover {
+    right:  inherit;
+}
+
+.dropdown-menu .sub-menu {
+    right: 90%;
+}
+.dropdown-menu li.dropdown-sub > a:after{
+    content: "\f104";
+    left:10px; 
+    right: auto;
+}
+
+.header-top .header-search {
+    float: right;
+}
+.header-top .header-userbar {
+    float: left;
+}
+.header-navbar .nav-main > li + li,
+.header-navbar .nav-social > li + li{
+    border-left: none;   
+    border-right: 1px solid #D0D0D0;   
+}
+.header-navbar .nav-main > li + li:hover{
+    border-left: none;
+    border-right: 3px solid;    
+}
+.nav-social {
+    float: left;
+}
+
+.header-top .header-userbar .checkbox label{
+   padding-right: 0;
+}
+
+.account-dropdown{
+    left: 0;
+    right: auto;
+}
+
+.iconpicker .caret {
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+}
+
+.posts-list-a .post-item .post-details ul li {
+    float: right;
+}
+
+
+.pagination {
+    float: left;
+}
+.pagination ul > li > a,
+.pagination ul > li > span {
+    float: right;
+}
+
+
+
+/*nestable*/
+
+.dd-list {margin-right:0}
+.dd-list .dd-list {padding-right:30px;padding-left:0}
+
+.dd-item >button {
+float:right ;
+margin:5px 5px 5px 5px;
+left:auto ;
+right:1px
+}
+
+.dd-item .action-buttons{
+    float: left;
+}
+
+.dd-dragel >li >.dd-handle {
+border-right:2px solid #777 ;
+border-left-width:0 
+}
+
+.dd-list >li [class*=item-] {
+border-left-width:0;
+border-right-width:0
+}
+
+.dd-list >li [class*=item-] >.dd-handle {
+border-right:2px solid;
+border-right-color:inherit;
+border-left-color:#DAE2EA;
+border-left-width:1px
+}
+
+.dd-list >li >.dd-handle .sticker {
+right:auto;
+left:0
+}
+
+
+/*
+    POSTS
+*/
+
+@media (min-width: 768px) {
+    .posts-header ul.posts-sorter{
+        float: left;
+    }
+}
+@media (min-width: 992px){
+    .brfilter{
+        float: right;
+    }    
+}
+.vote-a {
+    float: right;
+}
+.vote-a .up, .vote-a .down {
+    right: 8px;
+}
+.vote-a .total {
+  margin-right: 35px;
+  margin-left: 5px;    
+}
+
+.vote-b {
+    float: right;
+    margin: 0 15px;
+}
+
+
+.posts-list-a .post-item .thumb-topnav .vote {
+    margin-left: 5px;
+}
+
+
+.posts-list-a .post-item .thumb-body .caption{
+    right: 0;
+    text-align: right;
+}
+
+.posts-list-a .post-item .thumb-details ul li{
+    float: right;
+    margin-left: 2px;
+}
+
+.posts-list-b .post-item .post-thumb{
+    float: right;
+    margin-left: 10px;
+    
+}
+
+.post-actions{
+    float: left;
+}
+
+/*
+    POSTING
+*/
+
+.HTML5Uploader .time-info{
+    float: right;
+    margin-right: 18px;
+}
+.HTML5Uploader .speed-info {
+    float: left; 
+}
+.HTML5Uploader .files .first .cancel-single {
+    float: left;
+    margin-right: 13px;
+}
+.HTML5Uploader .files .second .progress-wrap {
+    float: left;
+}
+.HTML5Uploader .files .second .filesize {
+    float: right;
+    margin-left: 18px;
+}
+.HTML5Uploader .bar {
+    float: right;
+}
+.HTML5Uploader .success-tick {
+    left: 23px;
+    right: auto;
+}
+.files .progress{
+    left: 20px;
+}
+.files .panel-body .thumb{
+    float: right;
+    margin-left: 5px;
+}
+.featured-image-input .cancel{
+    left: 5px;
+}
+
+.fbform fieldset.fbsubmit .btn{
+    float: left;
+}
+
+
+/*
+    USERS & PROFILES
+*/
+.mini-vcard .vcard-pic{
+    float: right;
+    margin: 0px 0 0px 10px;
+}
+.mini-vcard .vcard-name{
+    float: right;
+}
+.mini-vcard .vcard-info{
+    float: left;
+}
+.mini-vcard .vcard-social li{
+    float: left;
+}
+.mini-vcard .vcard-stats{
+    float: left;
+}
+.profile-photo{
+    right: 15px;
+    left: auto;
+}
+.profile-name{
+    left: auto;
+    right: 175px;
+}
+.share-box .post-types li {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.share-box .share > .arrow {
+    left: auto;
+    right: 4px;
+}
+
+.timeline{
+    direction: ltr;
+}
+.timeline .desc{
+    text-align: right;
+}
+
+
+.posts-list-c .post-item .item-large{
+    float: right;    
+}
+
+.item-large ul.item-details > li{
+    padding: 0 0 0 10px;
+}
+
+.item-large .user-avatar{
+    float: right;
+    margin-left: 15px;    
+    margin-right: 0;    
+}
+
+.item-large h2.item-title,
+.item-large h1.item-title
+{
+    padding-left: 90px;
+    padding-right: 0;
+}
+
+.item-large .single-title .vote{
+    right: auto;
+    left: 0;
+}
+
+.social_container{
+	float: right;
+}
+
+.socialbar-inline,.post-item .socialbar-inline .fb-like{
+    float: right;
+}
+
+.swiper-button-prev .fa:before {content: "\f105"}
+.swiper-button-next .fa:before {content: "\f104"}

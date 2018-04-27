@@ -1,0 +1,193 @@
+
+/*
+ * jQuery File Upload UI Plugin CSS 9.0.0
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+.progress-animated .progress-bar,
+.progress-animated .bar {
+  background: url("../img/progressbar.gif") !important;
+  filter: none;
+}
+.fileupload-process {
+  float: right;
+  display: none;
+}
+.fileupload-processing .fileupload-process,
+.files .processing .preview {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/loading.gif") center no-repeat;
+  background-size: contain;
+}
+.files audio,
+.files video {
+  max-width: 300px;
+}
+
+.files .panel{
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.files .panel + .panel {
+    margin: 0;
+}
+.files .panel-heading img{
+    width: 32px;
+    height: 32px;
+}
+.files .panel-heading .thumb i.fa{
+    font-size: 15px;
+    padding: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1) inset, 0px 0px 0px 1px rgba(0, 0, 0, 0.05) inset;
+    background: none repeat scroll 0% 0% #EEE;
+}
+.files .panel-heading{
+    position: relative;
+    padding: 5px;
+    background: none;
+}
+
+.files .progress{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 100px;
+}
+
+.files .panel-heading .panel-title {
+    font-size: 14px;
+}
+
+.files .panel-heading .panel-title a{
+    white-space: nowrap; 
+    width: 95%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.files .panel-heading a{
+    display: block;
+}
+
+.files .panel-body .thumb{
+    float: left;
+    margin-right: 5px;
+}
+.files .panel-body .thumb i.fa{
+    font-size: 35px;
+    padding: 25px 35px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1) inset, 0px 0px 0px 1px rgba(0, 0, 0, 0.05) inset;
+    background: none repeat scroll 0% 0% #EEE;
+}
+.files .panel-body .file-info{
+    font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  .fileupload-buttonbar .toggle,
+  .files .toggle,
+  .files .btn span {
+    display: none;
+  }
+  .files .name {
+    width: 80px;
+    word-wrap: break-word;
+  }
+  .files audio,
+  .files video {
+    max-width: 80px;
+  }
+  .files img,
+  .files canvas {
+    max-width: 100%;
+  }
+}
+
+#fileupload .drop-wrapper {
+    margin: 15px auto 5px auto;
+}
+
+#fileupload  .dropzone {
+    padding: 30px 50px 50px 50px;
+    border: 5px dashed #d6d6d6;
+    text-align: center;
+}
+
+#fileupload .dropzone h1 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    color: #858585;
+}
+
+#fileupload  .dropzone button {
+    text-transform: none;
+    font-weight: normal;
+    font-size: 14px;
+    background-color: #505050;
+}
+
+#fileupload button, #fileupload .button {
+    padding: 10px 22px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    border: none;
+    -webkit-transition: all .10s ease;
+       -moz-transition: all .10s ease;
+        -ms-transition: all .10s ease;
+         -o-transition: all .10s ease;
+            transition: all .10s ease;
+}
+
+#fileupload button:hover, #fileupload .button:hover {
+    background-color: #F77872;
+}
+
+#fileupload  .gray {
+    background-color: #6B6868;
+}
+
+#fileupload  .gray:hover {
+ background-color: #7B7878;   
+}
+
+#fileupload  .pinkish {
+    background-color: #FF6760;
+}
+
+#fileupload  .pinkish:hover {
+    background-color: #F77872;
+}
+
+#fileupload .fileinput-button {
+    position: relative;
+    overflow: hidden;
+}
+
+#fileupload .fileinput-button input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 24px;
+    direction: ltr;
+    cursor: pointer;
+}

@@ -1,0 +1,240 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+    font-size: 12px;
+    background:#ede6e6 url(bg.jpg) top center no-repeat;
+}
+
+a {
+    color: #0088cc;
+}
+
+h1{
+    font-size: 20px;
+    line-height: 30px; 
+    margin: 0 0 10px 0;
+}
+
+h2{
+    font-size: 15px;
+    line-height: 24px; 
+    margin: 0 0 8px 0;
+}
+
+label{
+    font-weight: bold;
+}
+
+fieldset {
+	border: none;
+	border: 1px dashed #333;
+	clear: both;
+	margin: 20px 0 12px 0;
+	padding: 0;
+}
+legend {
+	color: #333;
+	font-size: 1.1em;
+	margin: 0 0 8px 8px;
+	padding: 0 8px 3px 8px;
+    background: #A3C43B;
+    color:#fff;
+}
+
+ul {
+    list-style: none;
+    margin: 0 0 15px 0;
+}
+ul li {
+    line-height: 1.3em;
+    padding: 3px 5px;
+    padding-left: 20px;
+}
+ul li.bullet-false {
+    background: url("false.png") no-repeat scroll center left transparent;
+    color: red;
+    font-weight: bold;    
+}
+ul li.bullet-true {
+    background: url("true.gif") no-repeat scroll center left transparent; 
+    color: green;
+    font-weight: bold;
+
+}  
+.error{
+    font-weight: bold;
+    color: red;
+}
+.alert ul {
+    margin: 0;
+}
+
+.outter{
+	padding: 6px;
+	background: url(overlay.png) top left;
+    max-width: 450px;
+    margin: 0 auto 20px;
+}
+
+.form-install{
+    background: #fff;   
+    padding: 15px;    
+}
+
+.fbform {
+
+}
+.fbform a{
+    color: #F60;
+}
+
+.fbform fieldset.fbsubmit {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.fbform dl {
+	margin: 0;
+    padding: 3px 10px;
+}
+.fbform dt {
+	clear: both;
+	display: block;
+	float: right;
+	margin: 10px 5px 0 0;
+	padding: 0;
+	width: 130px;
+}
+.fbform dd {
+	display: block;
+	float: right;
+	margin: 10px 0 10px 0;
+	padding:0;
+	width: 230px;
+}
+
+.fbform dd .fbinstructions {
+    font-size: 0.8em;
+    margin: 5px 0 0 0;
+    color: #777;
+}
+.fbform dd .fbinstructions ul{
+    list-style: inside square;
+}
+.fbform dd label {
+    display: block;
+}
+
+.fbform dd.fbformdivider {
+	border-bottom: 1px dashed #ccc;
+	clear: both;
+	float:none;
+	height: 1px;
+	margin: 0 0 5px 0;
+	overflow: hidden;
+	width: auto;
+}
+.fbform dd.fbformdivider.fblast {
+	display: none;
+}
+.fbtextfield, .fbselect {
+	background: #fff;
+	width: 230px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+
+.fbselect {width: 248px;}
+
+.fbtextarea {
+	font-family:Verdana,Arial,sans-serif;
+	font-size: 1em;
+}
+.fbradio {
+}
+.fbcheckbox {
+}
+.fbsubmitbtn {
+	margin: 0 0 15px 0;
+}
+.fbfielderror {
+	color: #e00000;
+}
+.fbrequired {
+	color: #e00000;
+}
+
+.fbformerrormessage {
+	background: #f9ecec;
+	border: 3px solid #e00000;
+	margin: 0;
+}
+.fbformerrormessage h2 {
+	background: #e00000;
+	color: #fff;
+	font-size: 1.2em;
+	padding: 8px;
+	margin: 0;
+}
+.fbformerrormessage ul {
+    margin: 5px;
+}
+.fbformerrormessage ul li{
+    list-style: inside square;
+}
+
+.fbthanks {
+	background: #f1fcf1;
+	border: 3px solid #02b602;
+	margin: 0;
+}
+.fbthanks h2 {
+	background: #02b602;
+	color: #fff;
+	font-size: 1.5em;
+	margin: 0;
+	padding: 10px 15px;
+}
+.fbthanks p {
+	padding: 15px;
+}
+.fbthanks p a {
+
+}
+.control-label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.form-control {
+    padding: 6px 12px;
+    font-size: 14px;
+    width: 230px;
+    height: auto;
+    padding: 5px;    
+}
+
+a.btn {
+    text-align: center;
+    display: block;
+}
+
+
+
+a.btn,
+input[type="submit"]
+{
+    padding: 2px 10px;
+	color:#893A00;
+	background:#FFCB00;
+    border: 1px solid #893A00;	
+}
+.license{overflow: hidden; background-color:#FFF;border:1px solid #ABABAB;height:250px;width:420px;margin:0}
+
+.copyrights{
+    text-align: center;
+}

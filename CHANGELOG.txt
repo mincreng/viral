@@ -1,0 +1,30 @@
+1.4
+- Photo Gallery (Merge all photos into one post)
+FIXED
+- Youtube API 3 (upgrade)
+- Maximum number of files exceeded
+- User Profile bug
+- General bugs
+
+1.3
+
+ADDED
+- Blog View Mode
+- NProgress Bar
+- SEO Improve (AggregateRating schema)
+- Export/Import Langauges
+- More Options for Page Layout Control
+FIXED
+- META_DESCRIPTION in view page
+- Social login  bug
+
+1.2
+- RSS Improved (Thumb + Enclosures)
+- User Profile Page Improved
+- User Timeline & Wall Added
+- Disqus Comments Option
+- Real or Random Names for Uploading
+
+1.1
+- Login Via Facebook & Google & Live & Twitter & Yahoo & LinkedIn
+- Improve User Profile Page

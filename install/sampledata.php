@@ -1,0 +1,24 @@
+<?php
+
+    $webfairy->updateOption('navbar_header', "[{\"type\":\"2\",\"page_id\":\"1\",\"icon\":\"fa-home\",\"title\":\"\",\"noicon\":\"false\",\"children\":[{\"type\":\"1\",\"url\":\"http:\\/\\/localhost\\/Mediat\\/?view=1\",\"icon\":\"fa-th\",\"title\":\"Grid View\",\"noicon\":\"false\"},{\"type\":\"1\",\"url\":\"?view=2\",\"icon\":\"fa-th-list\",\"title\":\"List View\",\"noicon\":\"false\"}]},{\"type\":\"1\",\"url\":\"#\",\"icon\":\"fa-th\",\"title\":\"Categories\",\"noicon\":\"false\",\"children\":[{\"type\":\"3\",\"cat_id\":\"7\",\"icon\":\"fa-adjust\",\"title\":\"Web Design\",\"noicon\":\"true\"},{\"type\":\"3\",\"cat_id\":\"16\",\"icon\":\"fa-adjust\",\"title\":\"Sport Games\",\"noicon\":\"true\"},{\"type\":\"3\",\"cat_id\":\"12\",\"icon\":\"fa-adjust\",\"title\":\"Music & Audio\",\"noicon\":\"true\"},{\"type\":\"3\",\"cat_id\":\"17\",\"icon\":\"fa-adjust\",\"title\":\"Puzzle Games\",\"noicon\":\"true\"}]},{\"type\":\"1\",\"url\":\"#\",\"icon\":\"fa-sitemap\",\"title\":\"Pages\",\"noicon\":\"false\",\"children\":[{\"type\":\"2\",\"page_id\":\"2\",\"icon\":\"fa-user\",\"title\":\"Login\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"3\",\"icon\":\"fa-unlock-alt\",\"title\":\"recover password\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"4\",\"icon\":\"fa-users\",\"title\":\"register\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"8\",\"icon\":\"fa-cog\",\"title\":\"Account\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"9\",\"icon\":\"fa-rss\",\"title\":\"Rss\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"10\",\"icon\":\"fa-bell-o\",\"title\":\"Upcoming\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"11\",\"icon\":\"fa-random\",\"title\":\"Random post\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"12\",\"icon\":\"fa-info\",\"title\":\"Privacy Policy\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"13\",\"icon\":\"fa-flag-checkered\",\"title\":\"Terms & Conditions\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"14\",\"icon\":\"fa-briefcase\",\"title\":\"About Us\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"7\",\"icon\":\"fa-phone\",\"title\":\"Contact\",\"noicon\":\"false\"}]},{\"type\":\"1\",\"url\":\"http:\\/\\/codecanyon.net\\/item\\/webfairy-mediat\\/9899596?ref=WebFairyNetwork\",\"icon\":\"fa-shopping-cart\",\"title\":\"Buy this Script\",\"noicon\":\"false\"}]");
+    $webfairy->updateOption('navbar_footer', "[{\"type\":\"2\",\"page_id\":\"1\",\"icon\":\"fa-home\",\"title\":\"Home\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"2\",\"icon\":\"fa-user\",\"title\":\"login\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"4\",\"icon\":\"fa-users\",\"title\":\"register\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"8\",\"icon\":\"fa-cog\",\"title\":\"Account\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"5\",\"icon\":\"fa-cog\",\"title\":\"Admin Panel\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"12\",\"icon\":\"fa-info\",\"title\":\"Privacy Policy\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"13\",\"icon\":\"fa-gavel\",\"title\":\"Terms & Conditions\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"7\",\"icon\":\"fa-envelope\",\"title\":\"Contact\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"10\",\"icon\":\"fa-clock-o\",\"title\":\"Upcoming\",\"noicon\":\"false\"},{\"type\":\"2\",\"page_id\":\"6\",\"icon\":\"fa-sign-out\",\"title\":\"logout\",\"noicon\":\"false\"}]");
+
+    $_cats = array(
+      array('id' => 1,'parent_id' => 0,'title' => 'Uncategoriezed','prefix' => 'uncategoriezed','sort' => 1),
+      array('id' => 7,'parent_id' => 11,'title' => 'Web Design','prefix' => 'web_design','sort' => 1),
+      array('id' => 11,'parent_id' => 0,'title' => 'Free Tutorials','prefix' => 'free_tutorials','sort' => 1),
+      array('id' => 12,'parent_id' => 11,'title' => 'Music &amp; Audio','prefix' => 'music_audio','sort' => 1),
+      array('id' => 14,'parent_id' => 11,'title' => 'Game Development','prefix' => 'game_development','sort' => 1),
+      array('id' => 15,'parent_id' => 0,'title' => 'Flash Games','prefix' => 'flash_games','sort' => 1),
+      array('id' => 16,'parent_id' => 15,'title' => 'Sport Games','prefix' => 'sport_games','sort' => 1),
+      array('id' => 17,'parent_id' => 15,'title' => 'Puzzle Games','prefix' => 'puzzle_games','sort' => 1),
+      array('id' => 18,'parent_id' => 0,'title' => 'Fun Zone','prefix' => 'fun','sort' => 1),
+      array('id' => 19,'parent_id' => 18,'title' => 'Fun Radio','prefix' => 'radio','sort' => 1),
+      array('id' => 20,'parent_id' => 18,'title' => 'Fun Tube','prefix' => 'fun_tube','sort' => 1),
+      array('id' => 21,'parent_id' => 0,'title' => 'Code Snippets','prefix' => 'code_snippets','sort' => 1),
+      array('id' => 22,'parent_id' => 21,'title' => 'Java','prefix' => 'java','sort' => 1),
+    );
+
+    foreach ($_cats as $cat_arr) {
+        $webfairy->db->cats()->insert($cat_arr);
+    }

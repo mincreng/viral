@@ -1,0 +1,24 @@
+RewriteEngine On
+
+RewriteRule ^(auth|my_posts|upcoming|contact|panel|login|account|register|recover|logout|search|random_post|index|ajax).html$ $1.php [QSA,L]
+
+RewriteRule ^pages/([^\.]+)\.html$ page.php?prefix=$1 [QSA,L]
+
+ErrorDocument 404 /error.php?code=404
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule .* - [S=5]
+RewriteRule ^users/?((index)\.html)?$ users_list.php [QSA,L]
+RewriteRule ^users/([0-9]+)/([^\.]+)\.html$ user_$2.php?id=$1 [QSA,L]
+RewriteRule ^([^/\.]+)/?((index)\.html)?$ catgory.php?prefix=$1 [QSA,L]
+RewriteRule ^([^\.]+)/([^\.]+)\.html view.php?cat=$1&id=$2 [L]
+
+RewriteRule ^(sitemap|rss)\.xml $1.php [QSA,L]
+RewriteRule ^sitemap_([0-9]+)\.xml sitemap.php?sitemap=$1 [QSA,L]
+
+RewriteRule ^lang_pkgs\.js lang_pkgs.php [QSA,L]
+
+AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/webm .webm

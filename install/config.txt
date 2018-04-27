@@ -1,0 +1,99 @@
+<?php
+/**
+ * @author Webfairy MediaT CMS - www.Webfairy.net
+ * {date}
+ */
+
+/** 
+* Database Constants - these constants refer to 
+* the database configuration settings. 
+*/
+    
+    $db_info['dsn'] = '{database_dsn}';
+    $db_info['prefix'] = '{table_prefix}';
+    $db_info['user'] = "{database_user}";
+    $db_info['pass'] = "{database_password}"; 
+
+
+    if (!defined('SECRET_KEY')) {
+        define('SECRET_KEY', '{secret_key}');
+    }
+
+/** 
+* Show MySql Errors. 
+* Not recomended for live site. true/false 
+*/
+    if (!defined('DEV_MODE'))
+        define('DEV_MODE', false);
+
+    if (DEV_MODE){
+    	@ini_set('display_errors', 'on');
+    	@error_reporting(E_ALL | E_STRICT);
+    }else{
+    	@ini_set('display_errors', 'off');
+    }
+
+    if(!defined('DB_CHARSET'))
+        define('DB_CHARSET', '{db_charset}');
+    
+    if(!defined('DB_COLLATE'))
+        define('DB_COLLATE', '{db_collate}');
+
+    function get_execution_time()
+    {
+        static $microtime_start = null;
+        if($microtime_start === null)
+        {
+            $microtime_start = microtime(true);
+            return 0.0;
+        }   
+        return microtime(true) - $microtime_start;
+    }
+    
+    get_execution_time();
+
+    if(extension_loaded('zlib')){
+        ini_set('zlib.output_compression', '1');
+    }
+
+    if (!defined('BASE_PATH')) {
+        $base_path= '{web_path}';
+        $base_url= '{web_url}';
+        define('BASE_PATH', $base_path);
+        define('BASE_URL', $base_url);
+    }
+
+    if (!defined('CACHE_PATH')) {
+        define('CACHE_PATH', BASE_PATH.'cache/');
+    }
+
+    $https_port = '443';
+    
+    if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
+        $isSecureRequest = false;
+    } else {
+        $isSecureRequest = ((isset ($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || $_SERVER['SERVER_PORT'] == $https_port);
+    }
+    if (!defined('URL_SCHEME')) {
+        $url_scheme=  $isSecureRequest ? 'https://' : 'http://';
+        define('URL_SCHEME', $url_scheme);
+    }
+    if (!defined('HTTP_HOST')) {
+        if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
+            $http_host='localhost';
+            define('HTTP_HOST', $http_host);
+        } else {
+            $http_host= $_SERVER['HTTP_HOST'];
+            if ($_SERVER['SERVER_PORT'] != 80) {
+                $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host);
+            }
+            $http_host .= ($_SERVER['SERVER_PORT'] == 80 || $isSecureRequest) ? '' : ':' . $_SERVER['SERVER_PORT'];
+    
+            define('HTTP_HOST', $http_host);
+        }
+    }
+    if (!defined('SITE_URL')) {
+        $site_url= $url_scheme . $http_host . BASE_URL;
+        define('SITE_URL', $site_url);
+    }
+?>

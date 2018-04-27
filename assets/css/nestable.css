@@ -1,0 +1,101 @@
+.nestable_list {
+    position:relative;
+    display:block;
+    margin:0;
+    padding:0;
+    list-style:none;
+    line-height:20px
+}
+
+.dd-list {
+    display:block;
+    position:relative;
+    margin:0;
+    padding:0;
+    list-style:none
+}
+
+.dd-list .dd-list {
+    padding-left:30px
+}
+
+.dd-collapsed .dd-list {
+    display:none
+}
+
+.dd-empty,.dd-item,.dd-placeholder {
+    display:block;
+    position:relative;
+    margin:0;
+    padding:0;
+    min-height:20px;
+    line-height:20px
+}
+
+
+
+.dd-item >button {
+    float: left;
+    margin:5px 5px 5px 5px;
+    left:1px;
+    right: auto   
+}
+
+
+.dd-item .action-buttons{
+    float: right;
+}
+
+.dd-empty,.dd-placeholder {
+    margin:5px 0;
+    padding:0;
+    min-height:30px;
+    background:#F0F9FF;
+    border:1px dashed #BED2DB;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+
+.dd-empty {
+    border-color:#AAA;
+    border-style:solid;
+    background-color:#e5e5e5
+}
+
+.dd-dragel {
+    position:absolute;
+    pointer-events:none;
+    z-index:999;
+    opacity:.6
+}
+
+.dd-dragel >li >.dd-handle {
+    border-color:#D6E1EA;
+    border-left:2px solid #777;
+    position:relative
+}
+
+.dd-dragel >li >.dd-handle [class*=btn-] {
+color:#FFF
+}
+
+.dd-dragel >.dd-item >.dd-handle {
+margin-top:0
+}
+
+.dd-list >li [class*=item-] {
+border-width:0;
+padding:0
+}
+
+.dd-list >li [class*=item-] >.dd-handle {
+border-left:2px solid;
+border-left-color:inherit
+}
+
+.dd-list >li >.dd-handle .sticker {
+    position:absolute;
+    right:0;
+    top:0
+}
